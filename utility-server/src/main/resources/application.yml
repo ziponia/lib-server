@@ -1,0 +1,14 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+
+
+kakao:
+  restKey:
+  adminKey:
+
+spring:
+  servlet:
+    multipart:
+      # location: ${java.io.tmpdir}
