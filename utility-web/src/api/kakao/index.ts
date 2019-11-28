@@ -39,6 +39,9 @@ const KakaoClient = {
         }
       }
     );
+  },
+  vclip: async (params: IKakaoVClipRequest) => {
+    return httpClient.get<IKakaoVClipResponse>(`/kakao/vclip`, { params });
   }
 };
 

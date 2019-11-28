@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -83,6 +81,12 @@ public class KakaoController {
             boolean deleted = fs.delete();
             if (!deleted) fs.deleteOnExit();
         }
+        return ResponseEntity.ok(model);
+    }
+
+    @GetMapping(value = "/kakao/vclip")
+    public ResponseEntity<VclipResponse> vclip(VclipRequest request) {
+        VclipResponse model = kakaoService.vclip(request);
         return ResponseEntity.ok(model);
     }
 }

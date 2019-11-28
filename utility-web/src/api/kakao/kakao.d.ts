@@ -100,3 +100,25 @@ interface IKakaoThumbnailCropRequest {
 interface IKakaoThumbnailCropResponse {
   thumbnail_image_url: string;
 }
+
+interface IKakaoVClipRequest {
+  query: string;
+  sort?: "accuracy" | "recency";
+  page?: number;
+  size?: number;
+}
+interface IKakaoVClipResponse {
+  meta: {
+    pageable_count: number;
+    total_count: number;
+    _end: boolean;
+  };
+  documents: {
+    title: string;
+    url: string;
+    thumbnail: string;
+    play_time: number;
+    author: string;
+    datetime: Date;
+  }[];
+}

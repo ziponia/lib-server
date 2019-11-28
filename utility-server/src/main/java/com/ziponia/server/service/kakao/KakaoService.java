@@ -31,4 +31,8 @@ public class KakaoService {
     public ThumbnailCropResponse thumbnail(ThumbnailCropRequest request) {
         return kakaoClient.thumbnailCrop(request);
     }
+
+    public VclipResponse vclip(VclipRequest request) {
+        return kakaoClient.vclip(request);
+    }
 }

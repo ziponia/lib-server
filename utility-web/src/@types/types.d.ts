@@ -1,0 +1,3 @@
+type PageProps = {
+  title: string;
+};

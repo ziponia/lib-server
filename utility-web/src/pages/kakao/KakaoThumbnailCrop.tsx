@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const { Dragger } = Upload;
 
-type Props = {};
+type Props = PageProps & {};
 
 const KakaoThumbnailCrop: React.FC<Props> = props => {
   const [imageUrl, setImageUrl] = useState("");
@@ -33,7 +33,7 @@ const KakaoThumbnailCrop: React.FC<Props> = props => {
   };
 
   return (
-    <Layout title="썸네일 추출" subTitle="by kakao">
+    <Layout title={props.title} subTitle="by kakao">
       <Input.Search
         size="large"
         placeholder="이곳에 이미지 URL 을 붙혀 넣으세요..."

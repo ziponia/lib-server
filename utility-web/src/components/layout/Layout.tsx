@@ -3,6 +3,7 @@ import { Layout as AntLayout, Menu as AntMenu, Icon, PageHeader } from "antd";
 import { useLocation, useHistory, useRouteMatch } from "react-router";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { routes } from "../../routes";
 
 const { Header, Sider, Content } = AntLayout;
 const { SubMenu } = AntMenu;
@@ -12,45 +13,6 @@ type Props = {
   subTitle?: string;
   style?: React.CSSProperties;
 };
-
-type INavigation = {
-  key: string;
-  title: string;
-  children?: INavigation[];
-};
-
-const routes: INavigation[] = [
-  {
-    key: "/",
-    title: "홈"
-  },
-  {
-    key: "/kakao",
-    title: "kakao",
-    children: [
-      {
-        key: "/web-search",
-        title: "웹 서치"
-      },
-      {
-        key: "/address",
-        title: "주소 검색"
-      },
-      {
-        key: "/coord2Region",
-        title: "좌표 -> 행정구역정보 변환"
-      },
-      {
-        key: "/translate",
-        title: "번역"
-      },
-      {
-        key: "/thumbnail-crop",
-        title: "썸네일 추출"
-      }
-    ]
-  }
-];
 
 const Layout: React.FC<Props> = props => {
   const router = useLocation();

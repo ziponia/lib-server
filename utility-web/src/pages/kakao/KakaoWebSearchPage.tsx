@@ -7,7 +7,7 @@ import { Input, List, Pagination } from "antd";
 import { useLocation, useHistory } from "react-router";
 import ReactJson from "react-json-view";
 
-type Props = {};
+type Props = PageProps & {};
 
 const KakaoWebSearchPage: React.FC<Props> = props => {
   const location = useLocation();
@@ -62,7 +62,7 @@ const KakaoWebSearchPage: React.FC<Props> = props => {
   };
 
   return (
-    <Layout title="웹 서치" subTitle="by kakao">
+    <Layout title={props.title} subTitle="by kakao">
       <Input.Search
         placeholder="검색어를 입력 해주세요..."
         size="large"

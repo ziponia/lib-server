@@ -3,11 +3,10 @@ import Layout from "../../components/layout/Layout";
 import { Input } from "antd";
 import { useLocation, useHistory } from "react-router";
 import qs from "query-string";
-import { AutoComplete } from "antd";
 import KakaoClient from "../../api/kakao";
 import ReactJson from "react-json-view";
 
-type Props = {};
+type Props = PageProps & {};
 
 const KakaoAddressPage: React.FC<Props> = props => {
   const location = useLocation();
@@ -51,7 +50,7 @@ const KakaoAddressPage: React.FC<Props> = props => {
     }
   };
   return (
-    <Layout title={"주소 검색"} subTitle="by kakao">
+    <Layout title={props.title} subTitle="by kakao">
       <Input.Search
         placeholder="검색어를 입력 해주세요..."
         size="large"

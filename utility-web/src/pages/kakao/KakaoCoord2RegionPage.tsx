@@ -7,7 +7,7 @@ import ReactJson from "react-json-view";
 import { ClickEventValue } from "google-map-react";
 import KakaoClient from "../../api/kakao";
 
-type Props = {};
+type Props = PageProps & {};
 
 const KakaoCoord2RegionPage: React.FC<Props> = props => {
   const [data, setData] = useState({});
@@ -27,7 +27,7 @@ const KakaoCoord2RegionPage: React.FC<Props> = props => {
   };
 
   return (
-    <Layout title="좌표 -> 행정구역정보 변환" subTitle="by kakao">
+    <Layout title={props.title} subTitle="by kakao">
       <Content>
         <ContentChild>
           <GoogleMapViewer onClick={mapClickHandler}>

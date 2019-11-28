@@ -9,7 +9,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const { TextArea } = Input;
 
-type Props = {};
+type Props = PageProps & {};
 
 let timer: any = null;
 
@@ -42,7 +42,7 @@ const KakaoTranslatePage: React.FC<Props> = props => {
   };
 
   return (
-    <Layout title="번역" subTitle="by kakao">
+    <Layout title={props.title} subTitle="by kakao">
       <Row style={{ padding: 20, boxSizing: "border-box" }}>
         <Col span={4} style={{ display: "flex", alignItems: "center" }}>
           <KakaoTranlateSelect value={srcLang} onChange={e => setSrcLang(e)} />
