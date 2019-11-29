@@ -8,6 +8,9 @@ kakao:
   restKey:
   adminKey:
 
+st11:
+  apiKey:
+
 spring:
   servlet:
     multipart:

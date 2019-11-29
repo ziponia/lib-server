@@ -66,8 +66,6 @@ const KakaoVClipPage: React.FC<Props> = props => {
 
   useEventListener("scroll", scrollEventHandler, contentRef.current!);
 
-  useEffect(scrollEventListener, []);
-
   const callApi = async () => {
     setLoading(true);
 
@@ -81,8 +79,6 @@ const KakaoVClipPage: React.FC<Props> = props => {
         setData(ajaxData);
       } else {
         const documents = data.documents.concat(ajaxData.documents);
-        console.log("page: ", page);
-        console.log(documents);
         const meta = ajaxData.meta;
         setData({
           ...data,
@@ -115,34 +111,39 @@ const KakaoVClipPage: React.FC<Props> = props => {
       <Content>
         <ContentChild ref={contentRef}>
           <List
+            itemLayout="vertical"
             style={{ flex: 1, overflowY: "auto" }}
             dataSource={data && data.documents}
             loading={loading}
             renderItem={item => (
               <List.Item
                 key={item.url}
+                actions={[
+                  <div>
+                    <small style={{ marginRight: 10 }}>
+                      등록&nbsp;
+                      {moment(item.datetime).format("YYYY년 MM월 DD일 HH:mm")}
+                    </small>
+                    <small>
+                      재생시간&nbsp;
+                      {parseTimeToString(item.play_time)}
+                    </small>
+                  </div>
+                ]}
                 extra={
-                  <a href={item.url} target="_blank">
-                    <img width={272} alt="thumbnail" src={item.thumbnail} />
+                  <a href={item.url} target="_blank" style={{ height: "100%" }}>
+                    <img
+                      alt="thumbnail"
+                      width="100%"
+                      height="100%"
+                      style={{ objectFit: "contain" }}
+                      src={item.thumbnail}
+                    />
                   </a>
                 }
               >
-                <List.Item.Meta
-                  title={item.author}
-                  description={
-                    <div>
-                      <div>{item.title}</div>
-                      <small style={{ marginRight: 10 }}>
-                        등록&nbsp;
-                        {moment(item.datetime).format("YYYY년 MM월 DD일 HH:mm")}
-                      </small>
-                      <small>
-                        재생시간&nbsp;
-                        {parseTimeToString(item.play_time)}
-                      </small>
-                    </div>
-                  }
-                />
+                <List.Item.Meta title={item.author} />
+                {item.title}
               </List.Item>
             )}
           />

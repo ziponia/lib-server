@@ -6,6 +6,7 @@ import KakaoThumbnailCrop from "./pages/kakao/KakaoThumbnailCrop";
 import { FunctionComponent } from "react";
 import MainPage from "./pages/MainPage";
 import KakaoVClipPage from "./pages/kakao/KakaoVClipPage";
+import St11ProductSearchPage from "./pages/st11/St11ProductSearchPage";
 
 export type RouteNavigationProps = {
   key: string;
@@ -55,6 +56,17 @@ export const routes: RouteNavigationProps = [
         key: "/vclip",
         title: "동영상 검색",
         component: KakaoVClipPage
+      }
+    ]
+  },
+  {
+    key: "/11st",
+    title: "11번가",
+    children: [
+      {
+        key: "/products",
+        title: "상품검색",
+        component: St11ProductSearchPage
       }
     ]
   }
