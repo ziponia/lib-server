@@ -5,7 +5,7 @@
 example link [https://fe.ziponia.com/](https://fe.ziponia.com/)
 
 utility-server
-- Spring boot ( webflux-starter )
+- Spring boot
 - gradle
 
 utility-web
