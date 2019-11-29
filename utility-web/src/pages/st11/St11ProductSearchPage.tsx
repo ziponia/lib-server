@@ -53,7 +53,8 @@ const St11ProductSearchPage: React.FC<Props> = props => {
   const keywordChangeHandler = () => {
     const newQuery = {
       ...qs.parse(location.search),
-      pageNum: undefined
+      pageNum: undefined,
+      q
     };
 
     history.push({
