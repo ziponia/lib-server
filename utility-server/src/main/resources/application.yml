@@ -11,7 +11,13 @@ kakao:
 st11:
   apiKey:
 
+google:
+  apiKey:
+
 spring:
   servlet:
     multipart:
       # location: ${java.io.tmpdir}
+  http:
+    converters:
+      preferred-json-mapper: gson

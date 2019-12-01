@@ -7,6 +7,7 @@ import { FunctionComponent } from "react";
 import MainPage from "./pages/MainPage";
 import KakaoVClipPage from "./pages/kakao/KakaoVClipPage";
 import St11ProductSearchPage from "./pages/st11/St11ProductSearchPage";
+import YoutubeSearchPage from "./pages/google/YoutubeSearchPage";
 
 export type RouteNavigationProps = {
   key: string;
@@ -67,6 +68,17 @@ export const routes: RouteNavigationProps = [
         key: "/products",
         title: "상품검색",
         component: St11ProductSearchPage
+      }
+    ]
+  },
+  {
+    key: "/google",
+    title: "Google",
+    children: [
+      {
+        key: "/youtube",
+        title: "유튜브 검색",
+        component: YoutubeSearchPage
       }
     ]
   }

@@ -1,6 +1,9 @@
 package com.ziponia.server;
 
+import com.ziponia.google.maps.GoogleMapsClient;
+import com.ziponia.google.youtube.YoutubeClient;
 import com.ziponia.kakao.client.KakaoClient;
+import com.ziponia.server.property.GoogleProperty;
 import com.ziponia.server.property.KakaoProperty;
 import com.ziponia.server.property.St11Property;
 import com.ziponia.st11.St11Client;
@@ -17,6 +20,9 @@ public class ProviderConfig {
     @Autowired
     private St11Property st11Property;
 
+    @Autowired
+    private GoogleProperty googleProperty;
+
     @Bean
     public KakaoClient kakaoClient() {
         return KakaoClient.builder()
@@ -29,6 +35,20 @@ public class ProviderConfig {
     public St11Client st11Client() {
         return St11Client.builder()
                 .setApiKey(st11Property.getApiKey())
+                .build();
+    }
+
+    @Bean
+    public GoogleMapsClient googleMapsClient() {
+        return GoogleMapsClient.builder()
+                .apiKey(googleProperty.getApiKey())
+                .build();
+    }
+
+    @Bean
+    public YoutubeClient youtubeClient() {
+        return YoutubeClient.builder()
+                .apiKey(googleProperty.getApiKey())
                 .build();
     }
 }
