@@ -1,1 +1,8 @@
 rootProject.name = 'server'
+
+include(":lib:google")
+include(":lib:naver")
+include(":lib:st11")
+include(":lib:util")
+include(":lib:kakao")
+include(":lib:iamport")

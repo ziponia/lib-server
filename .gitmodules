@@ -1,0 +1,3 @@
+[submodule "utility-server/lib"]
+	path = utility-server/lib
+	url = https://github.com/ziponia/lib.git
