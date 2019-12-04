@@ -25,6 +25,10 @@ String boot 의 환경변수는 이 곳에 있습니다.
 
 `utility-server/src/main/resources/application.yml`
 
+lib 서브모모듈을 다운받으세요.
+
+`git submodule init`
+
 FrontEnd 의 환경변수는 이 곳에 있습니다.
 
 `utility-web/.example.env`
